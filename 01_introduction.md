@@ -23,10 +23,10 @@ This study analyzes the households and trips tables of the NHTS dataset since it
 
 ### Tools and Process
 
-The tools and process listed below were used to create the data model for this study:
+The tools and process listed below were used to analyze data and provide recommendations:
 
 1. Jupyter Notebook - Exploratory data analysis, visualization and regression models were completed using Python within this notebook.
-2. Python Modules - The modules listed below were used for this study and will need to be installed in order to run this notebook:
+2. Python Modules - The modules listed below will need to be installed in order to run this notebook:
 
   * Pandas
   * NumPy
