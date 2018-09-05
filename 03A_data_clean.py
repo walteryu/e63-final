@@ -15,7 +15,7 @@ plt.rcParams['figure.figsize'] = (15.0, 7.5)
 import statsmodels
 from statsmodels.formula.api import ols
 
-# Scikit-Learn ML packages; documentation consulted for examples:
+# ML packages; documentation consulted for examples:
 # Reference: https://chrisalbon.com/#articles
 from sklearn import linear_model
 from sklearn.linear_model import LinearRegression
@@ -31,30 +31,55 @@ perpub = pd.DataFrame.from_csv('./perpub.csv', index_col=None)
 trippub = pd.DataFrame.from_csv('./trippub.csv', index_col=None)
 vehpub = pd.DataFrame.from_csv('./vehpub.csv', index_col=None)
 
-# df_imms_labor = pd.DataFrame.from_csv('../csv_files/imms_labor.csv', index_col=None)
+print("Before data clean:")
+print("")
+print("hhpub shape:")
+print(hhpub.shape)
+print("")
+print("perpub shape:")
+print(perpub.shape)
+print("")
+print("trippub shape:")
+print(trippub.shape)
+print("")
+print("vehpub shape:")
+print(vehpub.shape)
+print("")
 
-# print(list(df_imms_labor))
-# df_imms_labor_d1 = df_imms_labor.loc[df_imms_labor['District'] == 1]
+# Drop null values since they do not contribute to total
+hhpub.dropna(subset=['HOUSEID'], inplace=True)
+hhpub.dropna(subset=['HHSTATE'], inplace=True)
+hhpub.dropna(subset=['WTHHFIN'], inplace=True)
+trippub.dropna(subset=['HOUSEID'], inplace=True)
+trippub.dropna(subset=['WTTRDFIN'], inplace=True)
+# perpub.dropna(subset=[''], inplace=True)
+# vehpub.dropna(subset=[''], inplace=True)
 
-# Load D4 labor data
-# ds_labor_d4 = ws.datasets['imms_labor_d4.csv']
-# df_imms_labor_d4 = ds_labor_d4.to_dataframe()
+# Drop all zero values
+hhpub.loc[hhpub.WTHHFIN > 0]
+trippub.loc[trippub.WTTRDFIN > 0]
 
-# Load D4 labor data, positive values only
-# ds_labor_d4_positives = ws.datasets['imms_labor_d4_positives.csv']
-# df_imms_labor_d4_positives = ds_labor_d4_positives.to_dataframe()
+print("After removing zero values:")
+print("")
+print("hhpub shape:")
+print(hhpub.shape)
+print("")
+print("trippub shape:")
+print(trippub.shape)
+print("")
 
-# Load cleaned labor data
-# ds_labor_d4_clean = ws.datasets['labor_d4_all_clean.csv']
-# df_labor_d4_clean = ds_labor_d4_clean.to_dataframe()
+# Remove outliers which are not within 3 standard deviations from mean
+hhpub = hhpub[np.abs(hhpub.WTHHFIN - hhpub.WTHHFIN.mean()) <= (3*hhpub.WTHHFIN.std())]
+trippub = trippub[np.abs(trippub.WTTRDFIN - trippub.WTTRDFIN.mean()) <= (3*trippub.WTTRDFIN.std())]
 
-# Load cleaned labor/BPM data
-# ds_labor_d4_clean_bpm = ws.datasets['labor_d4_clean_bpm_r2.csv']
-# labor_d4_clean_bpm = ds_labor_d4_clean_bpm.to_dataframe()
-
-# Load FY1718 data for D4 EMM analysis
-# ds_labor_d4_FY1718 = ws.datasets['labor_d4_FY1718.csv']
-# labor_d4_FY1718 = ds_labor_d4_FY1718.to_dataframe()
+print("After removing outlier values:")
+print("")
+print("hhpub shape:")
+print(hhpub.shape)
+print("")
+print("trippub shape:")
+print(trippub.shape)
+print("")
 
 # Convert BPM and EPM columns from string to numeric, then divide them
 # cols = ['BPM', 'EPM']
@@ -63,34 +88,6 @@ vehpub = pd.DataFrame.from_csv('./vehpub.csv', index_col=None)
 # )
 # labor_d4_clean_bpm['Midpoint'] = (labor_d4_clean_bpm['Column A']+labor_d4_clean_bpm['Column B'])/2
 # labor_d4_clean_bpm['Midpoint'] = labor_d4_clean_bpm[['BPM', 'EPM']].mean(axis=1)
-
-# Load scored label data
-# ds_scored_labels = ws.datasets['labor_d4_boosted_tree.csv']
-# df_scored_labels = ds_scored_labels.to_dataframe()
-
-# Sort by D4 trash collection data
-# df_imms_cy_d1 = df_imms_cy.loc[df_imms_cy['District'] == 1]
-
-# Remove outliers which are not within 3 standard deviations from mean
-# df_imms_cy = df_imms_cy[np.abs(df_imms_cy.Quantity - df_imms_cy.Quantity.mean()) <= (3*df_imms_cy.Quantity.std())]
-
-# Drop null values since they do not contribute to trash volume
-# df_imms_cy.dropna(subset=['Quantity'], inplace=True)
-
-# Sort for CY only from D4 labor dataset
-# labor_d1_cy = df_imms_labor_d1.loc[df_imms_labor_d1.Unit == 'CUYD']
-
-# Sort for litter and AAH codes (D40050 & D41050)
-# labor_d1_cy = df_imms_labor_d1.loc[df_imms_labor_d1.Activity == 'D40050']
-
-# Sort for D42050 accounting code only from statewide labor dataset
-# df_imms_aah = df_imms_cy.loc[df_imms_cy.Code == 'D41050']
-# df_imms_encampment = df_imms_cy.loc[df_imms_cy.Code == 'D42050']
-
-# Drop all zero values
-# df_imms_cy.loc[df_imms_cy.Quantity > 0]
-
-# labor_d1_cy.loc[labor_d1_cy.PY > 0]
 
 # Change date type from string into datetime
 # df_imms_cy["InspectionDate"] = pd.to_datetime(df_imms_cy["InspectionDate"])
