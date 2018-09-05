@@ -48,6 +48,14 @@ tr_ny_weight_sum = tr_hh_ny['WTTRDFIN'].sum()
 tr_tx_weight_sum = tr_hh_tx['WTTRDFIN'].sum()
 tr_wi_weight_sum = tr_hh_wi['WTTRDFIN'].sum()
 
+# NHTS best estimate of annual miles by state
+# tr_ca_weight_sum = tr_hh_ca['BESTMILE'].sum()
+# tr_ga_weight_sum = tr_hh_ga['BESTMILE'].sum()
+# tr_nc_weight_sum = tr_hh_nc['BESTMILE'].sum()
+# tr_ny_weight_sum = tr_hh_ny['BESTMILE'].sum()
+# tr_tx_weight_sum = tr_hh_tx['BESTMILE'].sum()
+# tr_wi_weight_sum = tr_hh_wi['BESTMILE'].sum()
+
 # Print out initial results for analysis
 # print("Weighted Household Value by State - CA")
 # print("")
