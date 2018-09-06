@@ -1,3 +1,4 @@
+*.html
 *.ipynb
 .DS_Store
 .Rhistory
