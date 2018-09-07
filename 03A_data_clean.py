@@ -50,10 +50,42 @@ vehpub = pd.DataFrame.from_csv('./vehpub.csv', index_col=None)
 hhpub.dropna(subset=['HOUSEID'], inplace=True)
 hhpub.dropna(subset=['HHSTATE'], inplace=True)
 hhpub.dropna(subset=['WTHHFIN'], inplace=True)
+hhpub.dropna(subset=['CDIVMSAR'], inplace=True)
 trippub.dropna(subset=['HOUSEID'], inplace=True)
 trippub.dropna(subset=['WTTRDFIN'], inplace=True)
-# perpub.dropna(subset=[''], inplace=True)
+trippub.dropna(subset=['CDIVMSAR'], inplace=True)
+perpub.dropna(subset=['CDIVMSAR'], inplace=True)
 # vehpub.dropna(subset=[''], inplace=True)
+
+hhpub_cdivmsar = hhpub.groupby('CDIVMSAR')['CDIVMSAR']\
+  .agg(['count']).sort_values(by=['count'], ascending=False)
+  # .head(20)
+
+ax = hhpub_cdivmsar[['count']].plot(kind='bar', title ="Metro Area", figsize=(12, 6), legend=True, fontsize=12)
+plt.title('Bar Chart for Household Count by Metro Area', fontsize=16)
+ax.set_xlabel("Metro Area Code", fontsize=12)
+ax.set_ylabel("Household Count", fontsize=12)
+plt.show()
+
+trippub_cdivmsar = trippub.groupby('CDIVMSAR')['CDIVMSAR']\
+  .agg(['count']).sort_values(by=['count'], ascending=False)
+  # .head(20)
+
+ax = trippub_cdivmsar[['count']].plot(kind='bar', title ="Metro Area", figsize=(12, 6), legend=True, fontsize=12)
+plt.title('Bar Chart for Trip Count by Metro Area', fontsize=16)
+ax.set_xlabel("Metro Area Code", fontsize=12)
+ax.set_ylabel("Trip Count", fontsize=12)
+plt.show()
+
+perpub_cdivmsar = perpub.groupby('CDIVMSAR')['CDIVMSAR']\
+  .agg(['count']).sort_values(by=['count'], ascending=False)
+  # .head(20)
+
+ax = perpub_cdivmsar[['count']].plot(kind='bar', title ="Metro Area", figsize=(12, 6), legend=True, fontsize=12)
+plt.title('Bar Chart for Peron Count by Metro Area', fontsize=16)
+ax.set_xlabel("Metro Area Code", fontsize=12)
+ax.set_ylabel("Person Count", fontsize=12)
+plt.show()
 
 # Drop all zero values
 hhpub.loc[hhpub.WTHHFIN > 0]
