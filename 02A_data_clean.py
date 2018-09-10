@@ -29,6 +29,25 @@ vehpub = pd.DataFrame.from_csv('./vehpub.csv', index_col=None)
 hhpub.loc[hhpub.WTHHFIN > 0]
 trippub.loc[trippub.WTTRDFIN > 0]
 
+# Include only trips for work
+
+print("Before data clean:")
+print("")
+print("trippub shape:")
+print(trippub.shape)
+print("")
+
+# trippub.loc[trippub.WHYTRP1S == 10]
+# trippub.loc[trippub['WHYTRP1S'] == 10]
+# trippub[trippub['WHYTRP1S'] == 10]
+trippub.query('WHYTRP1S == 10')
+
+print("After data clean:")
+print("")
+print("trippub shape:")
+print(trippub.shape)
+print("")
+
 # Remove outliers which are not within 3 standard deviations from mean
 hhpub = hhpub[np.abs(hhpub.WTHHFIN - hhpub.WTHHFIN.mean()) <= (3*hhpub.WTHHFIN.std())]
 trippub = trippub[np.abs(trippub.WTTRDFIN - trippub.WTTRDFIN.mean()) <= (3*trippub.WTTRDFIN.std())]
