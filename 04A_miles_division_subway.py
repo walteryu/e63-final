@@ -61,7 +61,10 @@ veh_hh_divisions = {
         veh_per_hh_92
     ]
 }
-veh_hh_divisions_plot = pd.DataFrame(veh_hh_divisions, columns = ['division', 'veh_per_hh'])
+veh_hh_divisions_plot = pd.DataFrame(
+    veh_hh_divisions,
+    columns = ['division', 'veh_per_hh']
+)
 
 ax = veh_hh_divisions_plot[['veh_per_hh']].plot(
     kind='bar',
