@@ -4,6 +4,7 @@
 
 .DS_Store
 .Rhistory
+check_repo.sh
 
 data/
 users_guide/
