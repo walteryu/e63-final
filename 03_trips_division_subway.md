@@ -20,3 +20,8 @@ The divisions identified with highest total weight households were as follows:
 8. East South Central > 1M w/o Subway
 9. Pacific > 1M with Subway
 10. Pacific > 1M w/o Subway
+
+The results were plotted in the chart below with the following observations:
+
+1. Trip Count: Total trip count was higher in all divisions with access to a subway system than those without access. This trend implies that households with access to a subway system tend to be more densely populated and result in higher trip count.
+2. Trip Count Distribution: Trip count were distributed evenly between divisions despite household count differences which may be due to weight ranking or household formation (larger or smaller size).
