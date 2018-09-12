@@ -1,15 +1,3 @@
-# NHTS HH and trip data by division, weighted total and subway
-hh_21 = hhpub.loc[hhpub['CDIVMSAR'] == 21]
-hh_22 = hhpub.loc[hhpub['CDIVMSAR'] == 22]
-hh_31 = hhpub.loc[hhpub['CDIVMSAR'] == 31]
-hh_32 = hhpub.loc[hhpub['CDIVMSAR'] == 32]
-hh_51 = hhpub.loc[hhpub['CDIVMSAR'] == 51]
-hh_52 = hhpub.loc[hhpub['CDIVMSAR'] == 52]
-hh_62 = hhpub.loc[hhpub['CDIVMSAR'] == 62]
-hh_63 = hhpub.loc[hhpub['CDIVMSAR'] == 63]
-hh_91 = hhpub.loc[hhpub['CDIVMSAR'] == 91]
-hh_92 = hhpub.loc[hhpub['CDIVMSAR'] == 92]
-
 # Sum all weighted households by division
 hh_21_weight_sum = hh_21['WTHHFIN'].sum()
 hh_22_weight_sum = hh_22['WTHHFIN'].sum()
