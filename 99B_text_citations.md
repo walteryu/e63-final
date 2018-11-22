@@ -14,8 +14,6 @@ $^{5}$ Wired Article: https://www.wired.com/story/traffic-economy-fixes/
 
 ### Terms and Definitions
 
-Caltrans: California Department of Transportation
-<br></br>
 NHTS: National Household Transportation Survey
 <br></br>
 PM: Post-Mile (Unit of Length)
