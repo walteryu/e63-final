@@ -5,11 +5,12 @@
 .DS_Store
 .Rhistory
 check_repo.sh
+submission.zip
 
 data/
 draft/
 github/
 submission/
-submission.zip
 users_guide/
+spark-warehouse/
 .ipynb_checkpoints/
