@@ -1,6 +1,23 @@
 ### Conclusion
 
-The study answered the questions posed in the introduction as follows:
+This project answered the questions posed in the introduction as follows:
+
+1. What additional relationships between data can be identified with Spark ML?
+<br></br>
+**Answer**
+<br></br>
+
+2. Can these relationships identify trends to reduce average commute time?
+<br></br>
+**Answer**
+<br></br>
+
+3. If so, then what are some recommendations to do so?
+<br></br>
+**Answer**
+<br></br>
+
+The 2017 NHTS Data Challenge answered the questions posed in the introduction as follows:
 
 1. What are the most influential factors to trash collection volume?
 <br></br>
