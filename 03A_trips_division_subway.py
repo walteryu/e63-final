@@ -1,3 +1,5 @@
+# Module 3A - Trips, Division & Subway System:
+
 # Sum all weighted households by division
 hh_21_weight_sum = hh_21['WTHHFIN'].sum()
 hh_22_weight_sum = hh_22['WTHHFIN'].sum()
