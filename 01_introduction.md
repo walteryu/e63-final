@@ -1,6 +1,6 @@
 # CSCI E-63 Big Data Analytics - Fall 2018
 
-## Final Project - U.S. Commute Time Reduction with Machine Learning (Spark ML)
+## Final Project - Reducing U.S. Commute Time with Machine Learning (Spark ML)
 
 ### Author: Walter Yu, Graduate Degree Candidate
 
