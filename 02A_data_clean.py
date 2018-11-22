@@ -1,3 +1,4 @@
+# Module 2A - Data Clean:
 import csv
 import pandas as pd
 import numpy as np
@@ -59,5 +60,3 @@ hh_62 = hhpub.loc[hhpub['CDIVMSAR'] == 62]
 hh_63 = hhpub.loc[hhpub['CDIVMSAR'] == 63]
 hh_91 = hhpub.loc[hhpub['CDIVMSAR'] == 91]
 hh_92 = hhpub.loc[hhpub['CDIVMSAR'] == 92]
-
-print('Script done running!')
