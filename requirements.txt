@@ -1,0 +1,116 @@
+CSCI E-63, Fall 2018
+Final Project Requirements:
+
+The purpose of the final project is for each one of us to learn a new Big Data technology,
+framework or API that was not covered in class or learn non-trivial details of a use case
+where Spark and other Big Data technologies could be profitably used. Your effort will help
+your colleagues gain the same knowledge.  Write your final project report as a tutorial or
+a learning tool.  All project materials including all code will be made available to the entire class.
+Please do not include any proprietary code or code you do not want shared.
+
+You may propose your own topic. Your proposal must be approved by the professor.  Do not submit a project
+from your work. Topics may include Big Data issues related to your domain of interest (Life Sciences,
+Medical, Financial, Aerospace, etc.). Please do not include sensitive or proprietary material (ideas
+and code that could be considered Intellectual Property, either your own or belonging to your company).
+
+Note: You must use one or several Spark APIs or any other similar technology related to Big Data for
+every Case Study final project.
+
+Your project must demonstrate a Big Data related technology and include a software demonstration using
+a Big Data source. Your project must include a visualization component to present a graphical
+representation of results. Your final project is not a research paper but rather a technology
+demonstration and a tutorial.
+
+We will select a representative number of students and present their short YouTube videos to the whole class.
+Due to the large number of students we are not able to organize public presentation of all student projects.
+One or two presentations might take place during the class on December 7th and the rest on December 14th during
+the class time.  All students whose videos are presented are expected to participate in person or through ZOOM
+and answer questions from the audience. Your short YouTube presentation will be run on a machine in the classroom.
+If you are a local student and are invited to present, please come to the classroom to answer questions in person.
+Every YouTube video is expected to last not more than 2 minutes. Q&As should not last more than a minute.
+Presentations will take place on December 14th 2018, between 5:30 PM and 8:30 PM. Please note the extended hours.
+
+Note: if your presentation is selected and you are not present you will not receive full credit for your presentation.
+
+Final Project Approach:
+1. Select a topic from the auction list via Signup Genius starting on Friday, November 16th, 1:30 PM EST.
+You can propose your own topic, as well.
+2. Define a problem statement as to what you want to solve or demonstrate using selected technology and the use case.
+3. Select a Big Data source (there are many large data sets available online).
+4. Develop/implement/code a solution for the specified problem using the Big Data source and selected technology using
+a programming language of your choice: Java, Python, Scala, C, .NET.
+5. Produce a visualization of your data/results using D3, R, Python or another JS Framework.
+6. Document your work as described below.
+
+Documentation Requirements:
+
+A) Project Summary (Abstract), 1 (one) page Word document in a separate file. Project summary should contain your name and
+the title of your project.
+Produce a one-page summary which describe the problem you are trying to solve or demonstrate, your dataset, the technology
+or feature you are demonstrating, its uses, benefits, drawbacks, challenges and your results.  Describe briefly the working
+example you prepared. This first page is very important. Based on that page, your colleagues will judge whether to download
+your project and spend time reading your documentation and code. Please add URLs for both YouTube recordings to the bottom
+of the one-page summary.
+
+Note: The filename should start with the topic name followed by your name.
+TopicName_YourLastNameYourFirstName_onePage.docx
+
+B) Demo/solution implementation and working code:
+Produce a single working demo that meets your problem statement and provides a full implementation of your solution.
+You may not copy examples (demonstrations) of the technology that are on-line. (Grade will be 0).
+You can use API skeletons that are provided as we have done in class and show your extended programming use of them.
+Provide neatly organized and complete working code with comments. Please note that a project will not be given any
+points if a working implementation and code are missing. Please provide the URL to your full Big Data data source.
+If your dataset is larger than 10MB, PLEASE DO NOT UPLOAD your data set. In such a case, please provide only a
+sample of your data with the rest of your submission. Our site has a limited capacity and a few large submissions could block it.
+
+C) Slides:
+Produce a set of Power Point slides (10-20) with a few snapshots of your demo which captures the key points, i.e.,
+your problem statement, what the technology does, your demonstration and pros/cons. The first page of your
+Power Point slide must have a standard format that we provide.  Please use white background for all
+Power Point slides. White background makes slides readable, printable and presentable on YouTube.
+Place URLs of your YouTube videos on the last slide.
+
+Note: The filename should start with the topic name followed by your name
+
+D) Report:
+Produce a detailed document with a complete description of analyzed technology including all installation and
+configuration steps. Your report will start with your name and project title. Detailed installations and
+configuration is a required part of the report. Your colleagues must be able to reproduce your work based
+solely on the steps you have documented.  Describe your problem statement, data set, installation/configuration,
+results, what worked, what did not and why not, and any lessons learned. Report must show all steps needed to
+reproduce examples that you developed.  This report is like your homework solutions where all steps are described
+along with the results.
+
+1) The first page of your report should be the same as the one-page summary (abstract). The first page should contain
+your name and the project name.
+2) Please include your name and your project topic in the header or the footer of your MS Word Document.
+3) Name your file like you named 1 page summary appended with _report: TopicName_YourLastNameYourFirstName_Report.docx
+4) Please include page number on every page of your report.
+5) You are welcome to upload a PDF version of your documents. However, you must always submit an MS Word version of your report.
+6) Please include URLs for both of your YouTube videos at the end of your report
+
+E) 15 minute YouTube presentation:
+Produce a 15 minute YouTube presentation. This video will contain a summary of the technology and details of your project and results.
+If you insist, you can record two or even three 15 minute presentations. Please do not record four.
+
+F) 2 minute YouTube presentation:
+Produce a 2 minute YouTube presentation. This video will contain a summary of the technology and a quick overview of your
+demonstration. This video might get presented to the entire class so please make sure it is 2 minutes and not longer.
+
+Submission Instructions:
+Submit final assignment on the course site.  Upload your reports and slides separately.  Upload your zip file that contains
+all of your documents, your code and the data file.  Include your visualization files: html, JavaScript, Python, R code
+and data file within a separate folder in the zip file. Ensure your visualization files and all dependent files run!
+
+TAs will deduct points if they must edit your code to run it.  Name your zip file:
+TopicName_YourLastNameYourFirstName_Final.zip
+
+Grading criteria:
+Project Report and practical software code examples    50%
+PowerPoint Slides                                      20%
+15 minute YouTube video                          		   15%
+2 minute YouTube video                          		   10%
+One page summary                                       5%
+
+If you fail to provide practical software code example, you will lose at least 30% of the final project grade.
