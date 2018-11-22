@@ -1,6 +1,6 @@
-# CSCI E-63 - Fall 2018
+# CSCI E-63 Big Data Analytics - Fall 2018
 
-## Final Project - Improving U.S. Commute Time with Machine Learning (Spark ML)
+## Final Project - U.S. Commute Time Reduction with Machine Learning (Spark ML)
 
 ### Author: Walter Yu, Graduate Degree Candidate
 
@@ -12,7 +12,11 @@ The average commute time within each U.S. census division has a large impact on 
 
 This project continues the analysis developed for the 2017 NHTS Data Challenge. Whereas the contest entry focused on exploratory data analysis (EDA) and visualization, this project will continue analysis with Spark and machine learning. Specifically, it seeks to answer the following questions:
 
-ML questions here...
+1. What additional relationships between data can be identified with Spark ML?
+2. Can these relationships identify trends to reduce average commute time?
+3. If so, then what are some recommendations to do so?
+
+Questions covered by the 2017 NHTS Data Challenge were as follows:
 
 1. Which are the census divisions with the most trips per household$^{2}$?
 2. What are the average commute distance and time within those divisions?
@@ -21,11 +25,11 @@ ML questions here...
 
 ### NHTS Data Analysis
 
-This study analyzes the households, trips and vehicles tables of the NHTS dataset to evaluate commute trends by census division. Specifically, the tables were analyzed to evaluate average commute distance and time.
+The 2017 NHTS Data Challenge analyzed the households, trips and vehicles tables of the NHTS dataset to evaluate commute trends by census division. Specifically, the tables were analyzed to evaluate average commute distance and time. It provided an overview of U.S. commuter trends and recommendations to reduce average commute times.
 
 ### NHTS Machine Learning
 
-ML summary here...
+Spark ML was used to continue the 2017 NHTS Data Challenge to evaluate relationships within the NHTS dataset tables. Specifically, relationships between average annual trips, miles traveled and commute time.
 
 ### Tools and Process
 
@@ -41,3 +45,6 @@ The tools and process listed below were used to analyze data and provide recomme
   * Seaborn
   * Matplotlib
   * PySpark (Spark ML)
+
+## Installation
+Clone Github repository, then run notebook with [Python](https://www.python.org/) and [Jupyter Notebook](https://jupyter.org/).
