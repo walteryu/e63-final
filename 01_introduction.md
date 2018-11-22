@@ -1,17 +1,18 @@
+# CSCI E-63 - Fall 2018
 
-# 2017 NHTS Data Competition
+## Final Project - Improving U.S. Commute Time with Machine Learning (Spark ML)
 
-## Improving Commute Time with Data Analysis
-
-### Authors: Bonny Nyaga, P.E. and Walter Yu, P.E.
+### Author: Walter Yu, Graduate Degree Candidate
 
 ### Abstract
 
-The average commute time within each U.S. census division has a large impact on its economy, productivity, infrastructure and environment. Longer commute times cause lost wages for workers with longer commute times, additional wearing of highway infrastructure and environmental impacts. As a result, this study evaluates commute patterns with the NHTS dataset$^{1}$ and whether public transportation or additional transportation planning could reduce commute times based on data analysis.
+The average commute time within each U.S. census division has a large impact on its economy, productivity, infrastructure and environment. Longer commute times cause lost wages for workers with longer commute times, additional wearing of highway infrastructure and environmental impacts. As a result, this study evaluates commute patterns with the National Household Transportation Survey (NHTS) dataset$^{1}$ provided by the Federal Highway Administration (FHWA) and whether public transportation or additional transportation planning could reduce commute times based on data analysis.
 
 ### Introduction
 
-This study outlines the data, methods and results used to identify commute patterns. Specifically, it seeks to answer the following questions:
+This project continues the analysis developed for the 2017 NHTS Data Challenge. Whereas the contest entry focused on exploratory data analysis (EDA) and visualization, this project will continue analysis with Spark and machine learning. Specifically, it seeks to answer the following questions:
+
+ML questions here...
 
 1. Which are the census divisions with the most trips per household$^{2}$?
 2. What are the average commute distance and time within those divisions?
@@ -22,17 +23,21 @@ This study outlines the data, methods and results used to identify commute patte
 
 This study analyzes the households, trips and vehicles tables of the NHTS dataset to evaluate commute trends by census division. Specifically, the tables were analyzed to evaluate average commute distance and time.
 
+### NHTS Machine Learning
+
+ML summary here...
+
 ### Tools and Process
 
 The tools and process listed below were used to analyze data and provide recommendations:
 
 1. Jupyter Notebook - Exploratory data analysis and visualization were completed using this notebook.
-2. Python Modules - The modules listed below will need to be installed in order to run this notebook:
+2. Apache Spark and Spark ML - Modules used to develop analysis from 2017 NHTS Data Challenge.
+3. Python Modules - The modules listed below will need to be installed in order to run this notebook.
 
   * Pandas
   * NumPy
   * SciPy
   * Seaborn
   * Matplotlib
-  * StatsModels
-  * Scikit-Learn
+  * PySpark (Spark ML)
