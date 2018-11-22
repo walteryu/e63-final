@@ -1,4 +1,4 @@
-# Module 2D - Household Count with Gradient Boosted Tree (GBT) Algorithm:
+# Module 2D - HH Vehicle Count Factors with Gradient Boosted Tree (GBT) Algorithm:
 
 # Implement and analyze decision tree regression with Spark ML
 # Reference: HW10, Q5
@@ -8,13 +8,10 @@ from pyspark.sql import SQLContext, Row, SparkSession
 from pyspark.sql.types import *
 from pyspark.sql.functions import *
 
-from pyspark.ml.feature import VectorAssembler
-from pyspark.ml.regression import DecisionTreeRegressor
-from pyspark.ml.evaluation import RegressionEvaluator
-
 from pyspark.ml import Pipeline
 from pyspark.ml.regression import GBTRegressor
 from pyspark.ml.feature import VectorIndexer
+from pyspark.ml.feature import VectorAssembler
 from pyspark.ml.evaluation import RegressionEvaluator
 
 spark = SparkSession.builder.appName("nhts").getOrCreate()
