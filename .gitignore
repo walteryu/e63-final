@@ -7,5 +7,9 @@
 check_repo.sh
 
 data/
+draft/
+github/
+submission/
+submission.zip
 users_guide/
 .ipynb_checkpoints/
