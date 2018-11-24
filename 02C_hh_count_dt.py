@@ -56,9 +56,15 @@ dt_predictions.select("prediction","BIKE","BUS","CAR","PARA","PLACE","PRICE","PT
 dt_evaluator = RegressionEvaluator(labelCol="HHVEHCNT", predictionCol="prediction", metricName="rmse")
 rmse = dt_evaluator.evaluate(dt_predictions)
 print("Root Mean Squared Error (RMSE) on test data = %g" % rmse)
+print('')
 
 # Per slide 47 of lab 10 notes, evaluate accuracy:
-dt_evaluator = RegressionEvaluator(
-labelCol="HHVEHCNT", predictionCol="prediction", metricName="r2")
+dt_evaluator = RegressionEvaluator(labelCol="HHVEHCNT", predictionCol="prediction", metricName="r2")
 r2 = dt_evaluator.evaluate(dt_predictions)
 print("R Squared (R2) on test data = %g" % r2)
+print('')
+
+# Print feature importance:
+# Reference: https://towardsdatascience.com/building-a-linear-regression-with-pyspark-and-mllib-d065c3ba246a
+print('Feature Importance:')
+print(dt_model.featureImportances)
