@@ -4,34 +4,52 @@ This project answered the questions posed in the introduction as follows:
 
 1. What additional relationships between data can be identified with Spark ML?
 <br></br>
-**Answer**
+<br></br>
+**Households Table: Higher vehicle usage had high feature importance for predicting household vehicle count. Also, mass transit usage had low feature importance which implies it is independent of household vehicle count. Based on these results, it can be inferred that households in urban areas are more likely to be located near mass transit. However, mass usage has low feature importance with vehicle count whereas vehicle usage has has high feature importance for predicting household vehicle count.**
+<br></br>
+<br></br>
+**Trips Table: Longer distance and duration trips had high feature importance for predicting vehicle miles traveled. Also, urban density had low feature importance which implies it is independent of vehicle miles traveled. Based on these results, it can be inferred that vehicle miles traveled is likely to be determined by trip distance and duration. However, urban density has low feature importance with vehicle miles traveled.**
+<br></br>
+<br></br>
+**Vehicles Table: Household income and vehicle count had high feature importance for predicting vehicle miles traveled. Also, urban density had low feature importance which implies it is independent of annual vehicle miles traveled. Based on these results, it can be inferred that annual vehicle miles traveled is likely to be higher in households with higher income and vehicle count. However, urban density has low feature importance with annual vehicle miles traveled.**
+<br></br>
 <br></br>
 
 2. Can these relationships identify trends to reduce average commute time?
 <br></br>
-**Answer**
+<br></br>
+**Additional analysis is required since machine learning analysis identified relationships between data features. However, trends to reduce average commute time could not be inferred; specifically, additional analysis of trip type and comparison with vehicle usage is needed to evaluate how to reduce commute time.**
+<br></br>
 <br></br>
 
 3. If so, then what are some recommendations to do so?
 <br></br>
-**Answer**
+<br></br>
+**Based on the trends identified, there are no clear recommendations; however, households in urban areas are more likely to have access to mass transit and more frequent but shorter trips. Vehicle ownership is more likely to be determined by household income level whereas vehicle usage is more likely to be determined by trip distance and duration.**
+<br></br>
 <br></br>
 
 The 2017 NHTS Data Challenge answered the questions posed in the introduction as follows:
 
 1. What are the most influential factors to trash collection volume?
 <br></br>
+<br></br>
 **Field crew is the most influence factor followed by resources spent (hours, labor, amount) based on feature selection model developed in AML. The importance of crews indicate that highway geometry affects trash collection and efficiency rates. The importance of resources indicate their correlation with trash volume collection.**
+<br></br>
 <br></br>
 
 2. Can we predict trash collection volume based on these influential factors?
 <br></br>
+<br></br>
 **Yes, regression models were the best suited to predict trash volume which is a continuous variable. Specifically, the boosted tree regression was used to create an estimate.**
+<br></br>
 <br></br>
 
 3. Does trash collection efficiency rates vary between different highways?
 <br></br>
+<br></br>
 **Yes, efficiency rates vary between highway corridors based on the results of feature selection and clustering model. Specifically, the clustering model provides estimated efficiency rates during future trash collection and pilot study.**
+<br></br>
 <br></br>
 
 These results provide additional insight to the conjecture that trash collection volume was assumed to be influenced by labor/amount spent and efficiency rates would vary due to different trash generation levels and roadway geometry.
