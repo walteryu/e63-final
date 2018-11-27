@@ -1,7 +1,4 @@
 *.csv
-*.html
-*.ipynb
-
 .DS_Store
 .Rhistory
 check_repo.sh
@@ -10,6 +7,7 @@ submission.zip
 data/
 draft/
 github/
+notebooks/
 submission/
 users_guide/
 spark-warehouse/
