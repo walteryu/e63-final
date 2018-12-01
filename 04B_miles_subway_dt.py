@@ -3,26 +3,6 @@
 # Implement and analyze decision tree regression with Spark ML
 # Reference: HW10, Q5
 
-from pyspark import SparkContext, SparkConf
-from pyspark.sql import SQLContext, Row, SparkSession
-from pyspark.sql.types import *
-from pyspark.sql.functions import *
-
-from pyspark.ml.feature import VectorAssembler
-from pyspark.ml.regression import DecisionTreeRegressor
-from pyspark.ml.evaluation import RegressionEvaluator
-
-from pyspark.ml.feature import Normalizer
-from pyspark.ml.linalg import Vectors
-
-spark = SparkSession.builder.appName("nhts").getOrCreate()
-
-# Load csv file and process data:
-vehpub_sp = spark.read.format("csv")\
-    .option("header", "true")\
-    .option("inferSchema", "true")\
-    .load("./data/vehpub.csv")
-
 # Reference: https://stackoverflow.com/questions/46956026/how-to-convert-column-with-string-type-to-int-form-in-pyspark-data-frame
 vehpub_sp = vehpub_sp.withColumn("ANNMILES", vehpub_sp["ANNMILES"].cast(IntegerType()))
 vehpub_sp = vehpub_sp.withColumn("DRVRCNT", vehpub_sp["DRVRCNT"].cast(IntegerType()))
