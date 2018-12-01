@@ -60,3 +60,62 @@ hh_62 = hhpub.loc[hhpub['CDIVMSAR'] == 62]
 hh_63 = hhpub.loc[hhpub['CDIVMSAR'] == 63]
 hh_91 = hhpub.loc[hhpub['CDIVMSAR'] == 91]
 hh_92 = hhpub.loc[hhpub['CDIVMSAR'] == 92]
+
+# Spark and ML Setup
+from pyspark import SparkContext, SparkConf
+from pyspark.sql import SQLContext, Row, SparkSession
+from pyspark.sql.types import *
+from pyspark.sql.functions import *
+
+from pyspark.ml import Pipeline
+from pyspark.ml.linalg import Vectors
+from pyspark.ml.feature import VectorAssembler
+from pyspark.ml.feature import VectorIndexer
+from pyspark.ml.feature import Normalizer
+from pyspark.ml.regression import GBTRegressor
+from pyspark.ml.regression import DecisionTreeRegressor
+from pyspark.ml.evaluation import RegressionEvaluator
+
+spark = SparkSession.builder.appName("nhts").getOrCreate()
+
+# Load csv file and process data:
+hhpub_sp = spark.read.format("csv")\
+    .option("header", "true")\
+    .option("inferSchema", "true")\
+    .load("./data/hhpub.csv")
+
+# Load csv file and process data:
+trippub_sp = spark.read.format("csv")\
+    .option("header", "true")\
+    .option("inferSchema", "true")\
+    .load("./data/trippub.csv")
+
+# Load csv file and process data:
+vehpub_sp = spark.read.format("csv")\
+    .option("header", "true")\
+    .option("inferSchema", "true")\
+    .load("./data/vehpub.csv")
+
+# Module 6A - Spark and Neo4J Setup:
+# Reference: Lecture 11 lecture notes and Lab 11 notebook
+from pyspark.sql import SparkSession
+from pyspark import SparkContext, SparkConf
+from pyspark import SparkContext as sc
+from pyspark.sql import SQLContext
+
+appName = "nhts_graph"
+spark = SparkSession.builder.appName(appName).config(
+    'spark.jars.packages',
+    'graphframes:graphframes:0.6.0-spark2.3-s_2.11'
+).getOrCreate()
+
+# Load CSV data:
+hhpub = spark.read.option("header","true")\
+    .csv("./data/hhpub.csv")
+trippub = spark.read.option("header","true")\
+    .csv("./data/trippub.csv")
+
+print('Total Household Count:')
+print(hhpub.count())
+print('Total Trip Count:')
+print(trippub.count())
