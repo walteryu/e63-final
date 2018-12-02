@@ -95,27 +95,3 @@ vehpub_sp = spark.read.format("csv")\
     .option("header", "true")\
     .option("inferSchema", "true")\
     .load("./data/vehpub.csv")
-
-# Module 6A - Spark and Neo4J Setup:
-# Reference: Lecture 11 lecture notes and Lab 11 notebook
-from pyspark.sql import SparkSession
-from pyspark import SparkContext, SparkConf
-from pyspark import SparkContext as sc
-from pyspark.sql import SQLContext
-
-appName = "nhts_graph"
-spark = SparkSession.builder.appName(appName).config(
-    'spark.jars.packages',
-    'graphframes:graphframes:0.6.0-spark2.3-s_2.11'
-).getOrCreate()
-
-# Load CSV data:
-hhpub = spark.read.option("header","true")\
-    .csv("./data/hhpub.csv")
-trippub = spark.read.option("header","true")\
-    .csv("./data/trippub.csv")
-
-print('Total Household Count:')
-print(hhpub.count())
-print('Total Trip Count:')
-print(trippub.count())
