@@ -48,14 +48,17 @@ type(graph)
 graph.cache()
 
 # Summary statistics:
+print('')
 print("Total Number of Households: " + str(graph.vertices.count()))
 print("Total Number of Relationships in Graph: " + str(graph.edges.count()))
 print("Total Number of Relationships in Original Data: " + str(trip_edges.count()))
 
-print('Show edges:')
-graph.edges.groupBy("src", "dst").count().orderBy(desc("count")).show(50)
+# print('')
+# print('Show edges:')
+# graph.edges.groupBy("src", "dst").count().orderBy(desc("count")).show(50)
 
 # Graph degrees:
+print('')
 print('Query in-degrees:')
 inDeg = graph.inDegrees
 inDeg.orderBy(desc("inDegree")).show(50, False)
