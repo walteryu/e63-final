@@ -52,6 +52,7 @@ print('')
 print('Feature Importance:')
 print(dt_model.featureImportances)
 
+# Plot bar chart for feature importance:
 feature_importance = {
     'feature': [0,1,2,3,4,5,6],
     'score': [0.0446868452557,0.0586268748168,0.863075112975,0.000791107496273,0.000836709931205,0.00322482332894,0.0287585261961]
@@ -61,7 +62,6 @@ feature_importance_plot = pd.DataFrame(
     columns = ['feature', 'score']
 )
 
-# Create bar chart for trips by division
 ax = feature_importance_plot['score'].plot(
     kind='bar',
     title ="Weighted Value",
@@ -70,16 +70,16 @@ ax = feature_importance_plot['score'].plot(
     fontsize=12
 )
 x_labels = [
-    'Bike Influence',
-    'Bus Influence',
-    'Vehicle Count',
-    'Para-Transit Influence',
-    'Location Influence',
-    'Transit Price Influence',
-    'Para-Transit Influence',
+    'Bike Usage',
+    'Bus Usage',
+    'Vehicle Usage',
+    'Para-Transit Usage',
+    'Transit is Financial Burden',
+    'Gas Price Influence',
+    'Mass Transit Price Influence',
 ]
-plt.title('Weighted Houshold Count by Division - Feature Importance', fontsize=16)
-ax.set_xlabel("Feature, Household Count and Subway System", fontsize=12)
+plt.title('Factors Influencing Household Vehicle Count - Feature Importance (Decision Tree Algorithm)', fontsize=16)
+ax.set_xlabel("Feature, Factors Influencing Household Vehicle Count", fontsize=12)
 ax.set_ylabel("Feature Importance Score (0=Low; 1=High)", fontsize=12)
 ax.set_xticklabels(x_labels)
 plt.show()
