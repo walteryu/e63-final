@@ -2,7 +2,7 @@
 
 This project answered the questions posed in the introduction as follows:
 
-1. What additional relationships between data can be identified with Spark ML?
+1. What additional trends can be identified with machine learning and graph analysis?
 <br></br>
 <br></br>
 **Households Table: Higher vehicle usage had high feature importance for predicting household vehicle count. Also, mass transit usage had low feature importance which implies it is independent of household vehicle count. Based on these results, it can be inferred that households in urban areas are more likely to be located near mass transit. However, mass usage has low feature importance with vehicle count whereas vehicle usage has has high feature importance for predicting household vehicle count.**
@@ -14,52 +14,28 @@ This project answered the questions posed in the introduction as follows:
 **Vehicles Table: Household income and vehicle count had high feature importance for predicting vehicle miles traveled. Also, urban density had low feature importance which implies it is independent of annual vehicle miles traveled. Based on these results, it can be inferred that annual vehicle miles traveled is likely to be higher in households with higher income and vehicle count. However, urban density has low feature importance with annual vehicle miles traveled.**
 <br></br>
 <br></br>
+**Driver Behavior: The analysis demonstrated that vehicle count and usage are not influenced by mass transit access; however, access does help reduce overall miles traveled and trip duration. Residents in areas without mass transit intuitively drive more frequently. Residents with high income typically had a higher vehicle count per household. As a result, residents in rural areas or higher income would be target demographics to analyze driving behavior.**
+<br></br>
+<br></br>
 
-2. Can these relationships identify trends to reduce average commute time?
+2. Can these trends help reduce average U.S. commute times?
 <br></br>
 <br></br>
-**Additional analysis is required since machine learning analysis identified relationships between data features. However, trends to reduce average commute time could not be inferred; specifically, additional analysis of trip type and comparison with vehicle usage is needed to evaluate how to reduce commute time.**
+**Since vehicle count and usage are influenced by income level and location, residents with higher income or in rural areas would be target demographics to analyze driving behavior. Additional analysis of trip type and comparison with vehicle usage may provide additional insights into travel.**
 <br></br>
 <br></br>
 
 3. If so, then what are some recommendations to do so?
 <br></br>
 <br></br>
-**Based on the trends identified, there are no clear recommendations; however, households in urban areas are more likely to have access to mass transit and more frequent but shorter trips. Vehicle ownership is more likely to be determined by household income level whereas vehicle usage is more likely to be determined by trip distance and duration.**
+**Analyzing select demographics and trip types insight into how to influence driving behavior to reduce vehicle usage. In addition, living within an urban area with mass transit offers a convenient alternative to driving and intuitively reduces vehicle usage.**
 <br></br>
 <br></br>
-
-The 2017 NHTS Data Challenge answered the questions posed in the introduction as follows:
-
-1. What are the most influential factors to trash collection volume?
-<br></br>
-<br></br>
-**Field crew is the most influence factor followed by resources spent (hours, labor, amount) based on feature selection model developed in AML. The importance of crews indicate that highway geometry affects trash collection and efficiency rates. The importance of resources indicate their correlation with trash volume collection.**
-<br></br>
-<br></br>
-
-2. Can we predict trash collection volume based on these influential factors?
-<br></br>
-<br></br>
-**Yes, regression models were the best suited to predict trash volume which is a continuous variable. Specifically, the boosted tree regression was used to create an estimate.**
-<br></br>
-<br></br>
-
-3. Does trash collection efficiency rates vary between different highways?
-<br></br>
-<br></br>
-**Yes, efficiency rates vary between highway corridors based on the results of feature selection and clustering model. Specifically, the clustering model provides estimated efficiency rates during future trash collection and pilot study.**
-<br></br>
-<br></br>
-
-These results provide additional insight to the conjecture that trash collection volume was assumed to be influenced by labor/amount spent and efficiency rates would vary due to different trash generation levels and roadway geometry.
-
-The predictive model will help forecast trash volume based on important features identified in the analysis. These results will help improve the trash control strategy in the SF Bay Area which will be improved further prior to statewide implementation.
 
 ### Next Steps
 
-The following steps can be taken to further improve the model based on data exploration, visualization and modeling:
+The following steps can be taken to continue project results:
 
-1. As discussed with Caltrans field staff, the variance observed within the dataset can be reduced by improving consistency of data entry methods; as a result, doing so would lower variance and observed error within the regression models.
-2. Trash levels may be re-prioritized by other features instead of labor and amount spent to observe whether doing so would improve predictive model performance.
-3. These results should improve future trash collection efforts; as a result, the data collected from future efforts will create a positive feedback loop for achieving compliance with the Trash Provisions more quickly.
+1. Continue analysis of demographic types; specifically. residents with higher income or in rural areas.
+2. Continue analysis of trip type; specifically, reason for taking shorter trips (commute, errands, etc.).
+3. Continue graph analysis and build subgraphs of trips with multiple destinations.
