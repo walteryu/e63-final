@@ -21,7 +21,7 @@ This project answered the questions posed in the introduction as follows:
 2. Can these trends help reduce average U.S. commute times?
 <br></br>
 <br></br>
-**Since vehicle count and usage are influenced by income level and location, residents with higher income or in rural areas would be target demographics to analyze driving behavior. Additional analysis of trip type and comparison with vehicle usage may provide additional insights into travel.**
+**Since vehicle count and usage are influenced by income level and location, residents with higher income or in rural areas would be target demographics to analyze driving behavior. Additional analysis of trip type and comparison with vehicle usage may provide additional insights into changing driver behavior.**
 <br></br>
 <br></br>
 
