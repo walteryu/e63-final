@@ -60,3 +60,33 @@ print('')
 # Reference: https://towardsdatascience.com/building-a-linear-regression-with-pyspark-and-mllib-d065c3ba246a
 print('Feature Importance:')
 print(gbt_model.featureImportances)
+
+# Plot bar chart for feature importance:
+feature_importance = {
+    'feature': [0,1,2,3,4],
+    'score': [0.0455287970717,0.69210811385,0.0037337743339,0.225841999204,0.0327873155401]
+}
+feature_importance_plot = pd.DataFrame(
+    feature_importance,
+    columns = ['feature', 'score']
+)
+
+ax = feature_importance_plot['score'].plot(
+    kind='bar',
+    title ="Weighted Value",
+    figsize=(12, 6),
+    legend=True,
+    fontsize=12
+)
+x_labels = [
+    'Census Division',
+    'Trip Distance (Miles)',
+    'Census Division Population',
+    'Trip Duration (Minutes)',
+    'Urban Density'
+]
+plt.title('Factors Influencing Trip Distance - Feature Importance (Gradient Boosted Tree Algorithm)', fontsize=16)
+ax.set_xlabel("Feature, Factors Influencing Trip Distance", fontsize=12)
+ax.set_ylabel("Feature Importance Score (0=Low; 1=High)", fontsize=12)
+ax.set_xticklabels(x_labels)
+plt.show()
