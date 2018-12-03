@@ -1,6 +1,6 @@
-# CSCI E-63 Big Data Analytics - Fall 2018
+# CSCI E-63 Big Data Analytics - Final Project (Fall 2018)
 
-## Final Project - Reducing U.S. Commute Time with Machine Learning and Graph Analysis
+## Reducing Commute Time with Machine Learning and Graph Analysis
 
 ### Author: Walter Yu, Graduate Degree Candidate
 
