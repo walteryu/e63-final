@@ -13,6 +13,9 @@ $^{5}$ Wired Article: https://www.wired.com/story/traffic-economy-fixes/
 
 ### Terms and Definitions
 
+EDA: Exploratory Data Analysis
+<br></br>
+ML: Machine Learning
+<br></br>
 NHTS: National Household Transportation Survey
 <br></br>
-PM: Post-Mile (Unit of Length)
