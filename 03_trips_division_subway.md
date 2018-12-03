@@ -8,7 +8,7 @@ The average trips per household by division were calculated to identify commute 
 4. The weighted trip values within each division were totaled, then divided by total households.
 5. Result was average weighted trips per household by division.
 
-The divisions identified with highest total weight households were as follows:
+The divisions identified with highest total trips per households were as follows:
 
 1. Mid-Atlantic > 1M with Subway
 2. Mid-Atlantic > 1M w/o Subway
