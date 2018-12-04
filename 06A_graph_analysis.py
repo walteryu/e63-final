@@ -66,3 +66,38 @@ inDeg.orderBy(desc("inDegree")).show(50, False)
 print('Query out-degrees:')
 inDeg = graph.outDegrees
 inDeg.orderBy(desc("outDegree")).show(50, False)
+
+# Plot bar chart for feature importance:
+feature_importance = {
+    'feature': [0,1,2,3,4,5,6,7,8,9],
+    'score': [132928,118494,65736,54929,54560,52612,44119,43126,41895,33562]
+}
+feature_importance_plot = pd.DataFrame(
+    feature_importance,
+    columns = ['feature', 'score']
+)
+
+ax = feature_importance_plot['score'].plot(
+    kind='bar',
+    title ="Weighted Value",
+    figsize=(12, 6),
+    legend=True,
+    fontsize=12
+)
+x_labels = [
+    'West/South Central > 1M population w/o subway system',
+    'South Atlantic < 1M population',
+    'Pacific < 1M population',
+    'Mid-Atlantic < 1M population',
+    'Pacific > 1M population w/subway system',
+    'Pacific > 1M population w/o subway system',
+    'East North Central < 1M population',
+    'Mid-Atlantic > 1M population w/subway system',
+    'West/South Central < 1M population',
+    'South Atlantic < 1M population'
+]
+plt.title('Graph Connections between Division and Total Vehicle Trips', fontsize=16)
+ax.set_xlabel("Census Division", fontsize=12)
+ax.set_ylabel("Graph Connections", fontsize=12)
+ax.set_xticklabels(x_labels)
+plt.show()
