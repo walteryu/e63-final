@@ -34,7 +34,7 @@ This project answered the questions posed in the introduction as follows:
 **Analyzing select demographics and trip types insight into how to influence driving behavior to reduce vehicle usage. In addition, living within an urban area with mass transit offers a convenient alternative to driving and intuitively reduces vehicle usage.**
 <br></br>
 <br></br>
-**Reinforcing these results with a case study may generate additional support from the public and motivate residents to make adjustments.**
+**Reinforcing these results with a case study or public education campaign may generate additional support from the public and motivate residents to make adjustments. Public awareness may lead to support for future transportation planning and vehicle usage reduction efforts.**
 <br></br>
 <br></br>
 
@@ -45,3 +45,4 @@ The following steps can be taken to continue project results:
 1. Continue analysis of demographic types; specifically. residents with higher income or in rural areas.
 2. Continue analysis of trip type; specifically, reason for taking shorter trips (commute, errands, etc.).
 3. Continue graph analysis and build subgraphs of trips with multiple destinations.
+4. Consider public education campaign to raise awareness of this issue.
