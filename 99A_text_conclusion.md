@@ -24,11 +24,17 @@ This project answered the questions posed in the introduction as follows:
 **Since vehicle count and usage are influenced by income level and location, residents with higher income or in rural areas would be target demographics to analyze driving behavior. Additional analysis of trip type and comparison with vehicle usage may provide additional insights into changing driver behavior.**
 <br></br>
 <br></br>
+**The analysis reinforces the intuitive notion that living within urban areas with access mass transit can help in reducing vehicle count and usage. As a result, additional outreach and media regarding this trend may influence residents who are interested in reducing vehicle usage to follow this recommendation.**
+<br></br>
+<br></br>
 
 3. If so, then what are some recommendations to do so?
 <br></br>
 <br></br>
 **Analyzing select demographics and trip types insight into how to influence driving behavior to reduce vehicle usage. In addition, living within an urban area with mass transit offers a convenient alternative to driving and intuitively reduces vehicle usage.**
+<br></br>
+<br></br>
+**Reinforcing these results with a case study may generate additional support from the public and motivate residents to make adjustments.**
 <br></br>
 <br></br>
 
