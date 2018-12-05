@@ -20,6 +20,9 @@ from statsmodels.formula.api import ols
 from IPython.display import Image
 from IPython.core.display import HTML
 
+# Data Source - National Household Transportation Survey (NHTS)
+# Reference: https://nhts.ornl.gov/
+
 # Load trash volume data
 hhpub = pd.DataFrame.from_csv('./data/hhpub.csv', index_col=None)
 perpub = pd.DataFrame.from_csv('./data/perpub.csv', index_col=None)
