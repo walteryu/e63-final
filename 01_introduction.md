@@ -8,6 +8,12 @@
 
 The average commute time within each U.S. census division has a large impact on its economy, productivity, infrastructure and environment. Longer commute times can lead to lost wages for workers, additional wearing of highway infrastructure and environmental impacts. As a result, this study evaluates U.S. commuter patterns with the National Household Transportation Survey (NHTS) dataset$^{1}$ provided by the Federal Highway Administration (FHWA) and whether public transportation or additional transportation planning could reduce commute times based on data analysis.
 
+### Topic and Problem Statement
+
+Topic: “Modern scientific instrumentation collects large volumes of data. If you have access to any such data examine whether Spark would bering any benefits to the analysis.”
+
+Problem: Reduce commute time with Spark ML and GraphX by analyzing national highway usage data to reduce negative impacts on roadway infrastructure, worker productivity, livability and the environment.
+
 ### Introduction
 
 This project continues the analysis developed for the 2017 NHTS Data Challenge. Whereas the contest entry focused on exploratory data analysis (EDA) and visualization, this project will continue analysis with machine learning and graph analysis. Specifically, it seeks to answer the following questions:
@@ -72,5 +78,14 @@ The tools and modules listed below were used to analyze data and provide recomme
   * Matplotlib
   * PySpark (Spark ML)
 
-### Installation
-Clone Github repository, then run notebook with [Python](https://www.python.org/) and [Jupyter Notebook](https://jupyter.org/).
+### Installation and Configuration
+
+Configuration and Setup:
+1. Module Installation: pip install <module_name>
+2. Notebook Usage: import <module_name>
+
+* Data Cleaning: NumPy, SciPy & Pandas
+* Data Visualization: Matplotlib
+* Spark ML: Decision Tree & Gradient-Boosted Tree Algorithms
+* GraphX: Vertices/Edges & In/Out-Degree Functions
+* Documentation: Jupyter Notebook
