@@ -1,6 +1,7 @@
 # Module 4A - Miles, Division & Subway System:
 
 # Join NHTS trip with HH data to analyze total weighted trips per HH
+# Reference: https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.merge.html
 veh_hh_21 = pd.merge(vehpub, hh_21, left_on='HOUSEID', right_on='HOUSEID')
 veh_hh_22 = pd.merge(vehpub, hh_22, left_on='HOUSEID', right_on='HOUSEID')
 veh_hh_31 = pd.merge(vehpub, hh_31, left_on='HOUSEID', right_on='HOUSEID')
@@ -13,6 +14,7 @@ veh_hh_91 = pd.merge(vehpub, hh_91, left_on='HOUSEID', right_on='HOUSEID')
 veh_hh_92 = pd.merge(vehpub, hh_92, left_on='HOUSEID', right_on='HOUSEID')
 
 # NHTS annual miles by state and weighted total
+# Reference: https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.sum.html
 veh_21_weight_sum = veh_hh_21['ANNMILES'].sum()
 veh_22_weight_sum = veh_hh_22['ANNMILES'].sum()
 veh_31_weight_sum = veh_hh_31['ANNMILES'].sum()
@@ -68,6 +70,8 @@ veh_hh_divisions_plot = pd.DataFrame(
     columns = ['division', 'veh_per_hh']
 )
 
+# Plot bar chart:
+# Reference: https://chrisalbon.com/python/data_visualization/matplotlib_bar_plot/
 ax = veh_hh_divisions_plot[['veh_per_hh']].plot(
     kind='bar',
     title ="Weighted Value",
