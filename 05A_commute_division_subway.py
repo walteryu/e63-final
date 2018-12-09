@@ -22,6 +22,7 @@
 # print("")
 
 # Join NHTS trip with HH data to analyze total weighted trips per HH
+# Reference: https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.merge.html
 trip_hh_21 = pd.merge(trippub, hh_21, left_on='HOUSEID', right_on='HOUSEID')
 trip_hh_22 = pd.merge(trippub, hh_22, left_on='HOUSEID', right_on='HOUSEID')
 trip_hh_31 = pd.merge(trippub, hh_31, left_on='HOUSEID', right_on='HOUSEID')
@@ -45,6 +46,7 @@ trip_hh_63['COMMUTE'] = trip_hh_63['ENDTIME'] - trip_hh_63['STRTTIME']
 trip_hh_91['COMMUTE'] = trip_hh_91['ENDTIME'] - trip_hh_91['STRTTIME']
 trip_hh_92['COMMUTE'] = trip_hh_92['ENDTIME'] - trip_hh_92['STRTTIME']
 
+# Reference: https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.mean.html
 trip_hh_mean_21 = trip_hh_21['COMMUTE'].mean()
 trip_hh_mean_22 = trip_hh_22['COMMUTE'].mean()
 trip_hh_mean_31 = trip_hh_31['COMMUTE'].mean()
@@ -88,6 +90,8 @@ trip_hh_divisions_plot = pd.DataFrame(
     columns = ['division', 'trip_hh_mean']
 )
 
+# Create bar chart:
+# Reference: https://chrisalbon.com/python/data_visualization/matplotlib_bar_plot/
 ax = trip_hh_divisions_plot[['trip_hh_mean']].plot(
     kind='bar',
     title ="Weighted Value",
