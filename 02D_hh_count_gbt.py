@@ -53,6 +53,7 @@ print('Feature Importance:')
 print(gbt_model.featureImportances)
 
 # Plot bar chart for feature importance:
+# Reference: https://chrisalbon.com/python/data_visualization/matplotlib_bar_plot/
 feature_importance = {
     'feature': [0,1,2,3,4,5,6],
     'score': [0.0446868452557,0.0586268748168,0.863075112975,0.000791107496273,0.000836709931205,0.00322482332894,0.0287585261961]
@@ -62,6 +63,8 @@ feature_importance_plot = pd.DataFrame(
     columns = ['feature', 'score']
 )
 
+# Plot bar chart for feature importance:
+# Reference: https://chrisalbon.com/python/data_visualization/matplotlib_bar_plot/
 ax = feature_importance_plot['score'].plot(
     kind='bar',
     title ="Weighted Value",
