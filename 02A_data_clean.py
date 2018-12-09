@@ -1,4 +1,5 @@
 # Module 2A - Data Clean:
+
 import csv
 import pandas as pd
 import numpy as np
@@ -24,16 +25,19 @@ from IPython.core.display import HTML
 # Reference: https://nhts.ornl.gov/
 
 # Load trash volume data
+# Reference: https://chrisalbon.com/python/data_wrangling/pandas_dataframe_importing_csv/
 hhpub = pd.DataFrame.from_csv('./data/hhpub.csv', index_col=None)
 perpub = pd.DataFrame.from_csv('./data/perpub.csv', index_col=None)
 trippub = pd.DataFrame.from_csv('./data/trippub.csv', index_col=None)
 vehpub = pd.DataFrame.from_csv('./data/vehpub.csv', index_col=None)
 
 # Drop all zero values
+# Reference: https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.loc.html
 hhpub.loc[hhpub.WTHHFIN > 0]
 trippub.loc[trippub.WTTRDFIN > 0]
 
 # Remove outliers which are not within 3 standard deviations from mean
+# Reference: https://stackoverflow.com/questions/23199796/detect-and-exclude-outliers-in-pandas-dataframe
 hhpub = hhpub[
     np.abs(hhpub.WTHHFIN - hhpub.WTHHFIN.mean()) <= (3*hhpub.WTHHFIN.std())
 ]
@@ -42,6 +46,7 @@ trippub = trippub[
 ]
 
 # Drop null values since they do not contribute to total
+# Reference: https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.dropna.html
 hhpub.dropna(subset=['HOUSEID'], inplace=True)
 hhpub.dropna(subset=['HHSTATE'], inplace=True)
 hhpub.dropna(subset=['WTHHFIN'], inplace=True)
@@ -53,6 +58,7 @@ perpub.dropna(subset=['CDIVMSAR'], inplace=True)
 vehpub.dropna(subset=['ANNMILES'], inplace=True)
 
 # NHTS HH and trip data by division, weighted total and subway
+# Reference: https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.loc.html
 hh_21 = hhpub.loc[hhpub['CDIVMSAR'] == 21]
 hh_22 = hhpub.loc[hhpub['CDIVMSAR'] == 22]
 hh_31 = hhpub.loc[hhpub['CDIVMSAR'] == 31]
@@ -65,11 +71,13 @@ hh_91 = hhpub.loc[hhpub['CDIVMSAR'] == 91]
 hh_92 = hhpub.loc[hhpub['CDIVMSAR'] == 92]
 
 # Spark and ML Setup
+# Reference: https://spark.apache.org/docs/2.2.0/api/python/pyspark.html
 from pyspark import SparkContext, SparkConf
 from pyspark.sql import SQLContext, Row, SparkSession
 from pyspark.sql.types import *
 from pyspark.sql.functions import *
 
+# Reference: https://spark.apache.org/docs/2.2.0/api/python/pyspark.html
 from pyspark.ml import Pipeline
 from pyspark.ml.linalg import Vectors
 from pyspark.ml.feature import VectorAssembler
@@ -79,21 +87,25 @@ from pyspark.ml.regression import GBTRegressor
 from pyspark.ml.regression import DecisionTreeRegressor
 from pyspark.ml.evaluation import RegressionEvaluator
 
+# Reference: https://spark.apache.org/docs/2.2.0/api/python/pyspark.html
 spark = SparkSession.builder.appName("nhts").getOrCreate()
 
 # Load csv file and process data:
+# Reference: https://chrisalbon.com/python/data_wrangling/pandas_dataframe_importing_csv/
 hhpub_sp = spark.read.format("csv")\
     .option("header", "true")\
     .option("inferSchema", "true")\
     .load("./data/hhpub.csv")
 
 # Load csv file and process data:
+# Reference: https://chrisalbon.com/python/data_wrangling/pandas_dataframe_importing_csv/
 trippub_sp = spark.read.format("csv")\
     .option("header", "true")\
     .option("inferSchema", "true")\
     .load("./data/trippub.csv")
 
 # Load csv file and process data:
+# Reference: https://chrisalbon.com/python/data_wrangling/pandas_dataframe_importing_csv/
 vehpub_sp = spark.read.format("csv")\
     .option("header", "true")\
     .option("inferSchema", "true")\
