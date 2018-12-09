@@ -64,6 +64,7 @@ hh_divisions_plot = pd.DataFrame(
 )
 
 # Create bar chart for trips by division
+# Reference: https://chrisalbon.com/python/data_visualization/matplotlib_bar_plot/
 ax = hh_divisions_plot['hh'].plot(
     kind='bar',
     title ="Weighted Value",
