@@ -67,6 +67,8 @@ feature_importance_plot = pd.DataFrame(
     columns = ['feature', 'score']
 )
 
+# Plot bar chart for feature importance:
+# Reference: https://chrisalbon.com/python/data_visualization/matplotlib_bar_plot/
 ax = feature_importance_plot['score'].plot(
     kind='bar',
     title ="Weighted Value",
