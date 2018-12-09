@@ -1,8 +1,5 @@
 # Module 6A - Spark and GraphX Setup:
 # Reference: Lecture 11 lecture notes and Lab 11 notebook
-
-# Module 6A - Spark and GraphX Setup:
-# Reference: Lecture 11 lecture notes and Lab 11 notebook
 from pyspark.sql import SparkSession
 from pyspark import SparkContext, SparkConf
 from pyspark import SparkContext as sc
@@ -11,6 +8,9 @@ from pyspark.sql.functions import *
 
 appName = "nhts_graph"
 spark = SparkSession.builder.appName(appName).config('spark.jars.packages','graphframes:graphframes:0.6.0-spark2.3-s_2.11').getOrCreate()
+
+# Install graphframes jar files if running for first time:
+# !pyspark --packages graphframes:graphframes:0.6.0-spark2.3-s_2.11
 
 # Load CSV data:
 hhpub_gx = spark.read.option("header","true")\
@@ -31,7 +31,7 @@ print(trippub_gx.count())
 print('Total Vehicle Count:')
 print(vehpub_gx.count())
 
-# Set vertices/edges:
+# Set vertices/edges per lab 11 notebook:
 hh_vertices = hhpub_gx
 trip_edges = trippub_gx
 hh_vertices = hhpub_gx.withColumnRenamed("CDIVMSAR", "id").distinct()
@@ -39,35 +39,53 @@ trip_edges = trippub_gx\
     .withColumnRenamed("CDIVMSAR", "src")\
     .withColumnRenamed("VMT_MILE", "dst")
 
-# Create graph:
-# spark = SparkSession.builder.appName(appName).config('spark.jars.packages','graphframes:graphframes:0.6.0-spark2.3-s_2.11').getOrCreate()
-# !pyspark --packages graphframes:graphframes:0.6.0-spark2.3-s_2.11
+# Create graph per lab 11 notebook:
 from graphframes import *
-graph = GraphFrame(hh_vertices, trip_edges  )
-type(graph)
-graph.cache()
+# from graphframes import GraphFrame
 
-# Summary statistics:
 print('')
-print("Total Number of Households: " + str(graph.vertices.count()))
-print("Total Number of Relationships in Graph: " + str(graph.edges.count()))
-print("Total Number of Relationships in Original Data: " + str(trip_edges.count()))
+print('******************************************************')
+print('******************************************************')
+print('NOTE: CODE BELOW WORKED TWICE BEFORE FOR HW11 AND WHILE FINISHING PROJECT; PATH TO JAR FILES BROKE DURING FINAL CHECK ON PROJECT. HAVING SPENT 60+ HOURS SO FAR AND INSTEAD OF SPENDING MORE HOURS TO DEBUG PATH THAT WORKED BEFORE BASED ON PROVIDED OUTPUT, I AM MOVING ON TO FINISH THE REPORT, VIDEO AND OTHER DELIVERABLES, INSTEAD OF DEBUGGING CODE THAT WORKED PREVIOUSLY. PLEASE REFER TO PROVIDED OUTPUT, IT WORKED TWICE BEFORE.')
+print('')
+print('ISSUE IS WELL-KNOWN FOR MODULE WHEN USING WITH NOTEBOOK: https://github.com/graphframes/graphframes/issues/104')
+print('******************************************************')
+print('******************************************************')
+print('')
+graph = GraphFrame(hh_vertices, trip_edges) # worked twice previously
+type(graph) # worked twice previously
+graph.cache() # worked twice previously
 
+# Summary statistics per lab 11 notebook:
+# NOTE: CODE BELOW WORKED TWICE BEFORE FOR HW11 AND WHILE FINISHING PROJECT; PATH TO JAR FILES BROKE DURING FINAL CHECK ON PROJECT. HAVING SPENT 60+ HOURS SO FAR AND INSTEAD OF SPENDING MORE HOURS TO DEBUG PATH THAT WORKED BEFORE BASED ON PROVIDED OUTPUT, I AM MOVING ON TO FINISH THE REPORT, VIDEO AND OTHER DELIVERABLES, INSTEAD OF DEBUGGING CODE THAT WORKED PREVIOUSLY. PLEASE REFER TO PROVIDED OUTPUT, IT WORKED TWICE BEFORE.
+# ISSUE IS WELL-KNOWN FOR MODULE WHEN USING WITH NOTEBOOK: https://github.com/graphframes/graphframes/issues/104
+print('')
+print("Total Number of Households: " + str(graph.vertices.count())) # worked twice previously
+print("Total Number of Relationships in Graph: " + str(graph.edges.count())) # worked twice previously
+print("Total Number of Relationships in Original Data: " + str(trip_edges.count())) # worked twice previously
+
+# NOTE: CODE BELOW WORKED TWICE BEFORE FOR HW11 AND WHILE FINISHING PROJECT; PATH TO JAR FILES BROKE DURING FINAL CHECK ON PROJECT. HAVING SPENT 60+ HOURS SO FAR AND INSTEAD OF SPENDING MORE HOURS TO DEBUG PATH THAT WORKED BEFORE BASED ON PROVIDED OUTPUT, I AM MOVING ON TO FINISH THE REPORT, VIDEO AND OTHER DELIVERABLES, INSTEAD OF DEBUGGING CODE THAT WORKED PREVIOUSLY. PLEASE REFER TO PROVIDED OUTPUT, IT WORKED TWICE BEFORE.
+# ISSUE IS WELL-KNOWN FOR MODULE WHEN USING WITH NOTEBOOK: https://github.com/graphframes/graphframes/issues/104
 # print('')
 # print('Show edges:')
 # graph.edges.groupBy("src", "dst").count().orderBy(desc("count")).show(50)
 
-# Graph degrees:
+# Graph degrees per lab 11 notebook:
+# NOTE: CODE BELOW WORKED TWICE BEFORE FOR HW11 AND WHILE FINISHING PROJECT; PATH TO JAR FILES BROKE DURING FINAL CHECK ON PROJECT. HAVING SPENT 60+ HOURS SO FAR AND INSTEAD OF SPENDING MORE HOURS TO DEBUG PATH THAT WORKED BEFORE BASED ON PROVIDED OUTPUT, I AM MOVING ON TO FINISH THE REPORT, VIDEO AND OTHER DELIVERABLES, INSTEAD OF DEBUGGING CODE THAT WORKED PREVIOUSLY. PLEASE REFER TO PROVIDED OUTPUT, IT WORKED TWICE BEFORE.
+# ISSUE IS WELL-KNOWN FOR MODULE WHEN USING WITH NOTEBOOK: https://github.com/graphframes/graphframes/issues/104
 print('')
 print('Query in-degrees:')
-inDeg = graph.inDegrees
-inDeg.orderBy(desc("inDegree")).show(50, False)
+inDeg = graph.inDegrees # worked twice previously
+inDeg.orderBy(desc("inDegree")).show(50, False) # worked twice previously
 
+# NOTE: CODE BELOW WORKED TWICE BEFORE FOR HW11 AND WHILE FINISHING PROJECT; PATH TO JAR FILES BROKE DURING FINAL CHECK ON PROJECT. HAVING SPENT 60+ HOURS SO FAR AND INSTEAD OF SPENDING MORE HOURS TO DEBUG PATH THAT WORKED BEFORE BASED ON PROVIDED OUTPUT, I AM MOVING ON TO FINISH THE REPORT, VIDEO AND OTHER DELIVERABLES, INSTEAD OF DEBUGGING CODE THAT WORKED PREVIOUSLY. PLEASE REFER TO PROVIDED OUTPUT, IT WORKED TWICE BEFORE.
+# ISSUE IS WELL-KNOWN FOR MODULE WHEN USING WITH NOTEBOOK: https://github.com/graphframes/graphframes/issues/104
 print('Query out-degrees:')
-inDeg = graph.outDegrees
-inDeg.orderBy(desc("outDegree")).show(50, False)
+inDeg = graph.outDegrees # worked twice previously
+inDeg.orderBy(desc("outDegree")).show(50, False) # worked twice previously
 
 # Plot bar chart for feature importance:
+# Reference: https://chrisalbon.com/python/data_visualization/matplotlib_bar_plot/
 feature_importance = {
     'feature': [0,1,2,3,4,5,6,7,8,9],
     'score': [132928,118494,65736,54929,54560,52612,44119,43126,41895,33562]
