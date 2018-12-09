@@ -1,6 +1,7 @@
 # Module 3A - Trips, Division & Subway System:
 
 # Sum all weighted households by division
+# Reference: https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.sum.html
 hh_21_weight_sum = hh_21['WTHHFIN'].sum()
 hh_22_weight_sum = hh_22['WTHHFIN'].sum()
 hh_31_weight_sum = hh_31['WTHHFIN'].sum()
@@ -13,6 +14,7 @@ hh_91_weight_sum = hh_91['WTHHFIN'].sum()
 hh_92_weight_sum = hh_92['WTHHFIN'].sum()
 
 # Join NHTS trip with HH data to analyze total weighted trips per HH
+# Reference: https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.merge.html
 tr_hh_21 = pd.merge(trippub, hh_21, left_on='HOUSEID', right_on='HOUSEID')
 tr_hh_22 = pd.merge(trippub, hh_22, left_on='HOUSEID', right_on='HOUSEID')
 tr_hh_31 = pd.merge(trippub, hh_31, left_on='HOUSEID', right_on='HOUSEID')
@@ -25,6 +27,7 @@ tr_hh_91 = pd.merge(trippub, hh_91, left_on='HOUSEID', right_on='HOUSEID')
 tr_hh_92 = pd.merge(trippub, hh_92, left_on='HOUSEID', right_on='HOUSEID')
 
 # NHTS trip data by division and weighted total
+# Reference: https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.sum.html
 tr_21_weight_sum = tr_hh_21['WTTRDFIN'].sum()
 tr_22_weight_sum = tr_hh_22['WTTRDFIN'].sum()
 tr_31_weight_sum = tr_hh_31['WTTRDFIN'].sum()
@@ -78,6 +81,7 @@ tr_hh_divisions = {
 tr_hh_divisions_plot = pd.DataFrame(tr_hh_divisions, columns = ['division', 'trip_per_hh'])
 
 # Create bar chart for trips by division
+# Reference: https://chrisalbon.com/python/data_visualization/matplotlib_bar_plot/
 ax = tr_hh_divisions_plot[['trip_per_hh']].plot(
     kind='bar',
     title ="Weighted Value",
