@@ -1,3 +1,33 @@
+### Lessons Learned
+
+Spark ML: Suitable technology to analyze reasonably large dataset; regression algorithms used to evaluate feature importance
+
+Pros:
+1. Industry standard for rapidly analyzing large datasets by utilizing RDDs, pipelines and built-in ML algorithms
+2. Algorithm choices are sufficient for basic analysis
+3. Supports data pipelines within Spark/Python environment
+
+Cons:
+1. Algorithm choices may be limited for future analysis
+2. Scikit-Learn may be sufficient for many use cases
+3. Data visualization is limited (Matlibplot)
+
+GraphX: Suitable technology to analyze graph for potentially complex relationships between household and trip data tables
+
+Pros:
+1. One of the best choices for graph analysis if working with RDDs, Python and Jupyter Notebook (Good integration)
+2. Supports dataframes; minimal integration required
+
+Cons:
+1. Not a mature module; jar file path broke code after working previously on HW11 and previous version of notebook
+2. Not as full-featured as Neo4J or similar graph databases
+
+NHTS Dataset:
+
+1. Mass transit does not appear to directly influence driving behavior; however, trip distance/length has high significance
+2. Urban areas have higher population so appear to have higher total trips but shorter distances; rural areas have lower population so have lower total trips but longer distances
+3. Households with higher income appear to have higher vehicle count and usage; trip destination also has significance
+
 ### Conclusion
 
 This project answered the questions posed in the introduction as follows:
