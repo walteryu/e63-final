@@ -62,6 +62,7 @@ print('Feature Importance:')
 print(gbt_model.featureImportances)
 
 # Plot bar chart for feature importance:
+# Reference: https://chrisalbon.com/python/data_visualization/matplotlib_bar_plot/
 feature_importance = {
     'feature': [0,1,2,3,4],
     'score': [0.0455287970717,0.69210811385,0.0037337743339,0.225841999204,0.0327873155401]
