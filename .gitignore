@@ -4,6 +4,8 @@
 check_repo.sh
 submission.zip
 lab_11_graphframes.ipynb
+canvas_submission/SparkML_GraphX_ScienceData_YuWalter_FullReport.docx
+canvas_submission/SparkML_GraphX_ScienceData_YuWalter_onePage-1.docx
 
 data/
 draft/
@@ -13,3 +15,5 @@ submission/
 users_guide/
 spark-warehouse/
 .ipynb_checkpoints/
+images/final_report/
+images/presentation/
