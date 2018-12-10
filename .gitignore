@@ -1,11 +1,13 @@
 *.csv
 .DS_Store
 .Rhistory
+git_rm.sh
 check_repo.sh
 submission.zip
 lab_11_graphframes.ipynb
-canvas_submission/SparkML_GraphX_ScienceData_YuWalter_FullReport.docx
+canvas_submission/SparkML_GraphX_ScienceData_YuWalter_Slides.pptx
 canvas_submission/SparkML_GraphX_ScienceData_YuWalter_onePage-1.docx
+canvas_submission/SparkML_GraphX_ScienceData_YuWalter_FullReport.docx
 
 data/
 draft/
