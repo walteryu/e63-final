@@ -86,7 +86,7 @@ x_labels = [
     'Trip Duration (Minutes)',
     'Urban Density'
 ]
-plt.title('Factors Influencing Trip Distance - Feature Importance (Gradient Boosted Tree Algorithm)', fontsize=16)
+plt.title('Factors Influencing Trip Distance - Feature Importance (Decision Tree Algorithm)', fontsize=16)
 ax.set_xlabel("Feature, Factors Influencing Trip Distance", fontsize=12)
 ax.set_ylabel("Feature Importance Score (0=Low; 1=High)", fontsize=12)
 ax.set_xticklabels(x_labels)
