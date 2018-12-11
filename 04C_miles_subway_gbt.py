@@ -1,4 +1,4 @@
-# Module 4C - Vehicle Mileage Factors with Decision Tree Algorithm:
+# Module 4C - Vehicle Mileage Factors with Gradient Boosted Tree Algorithm:
 
 # Implement and analyze decision tree regression with Spark ML
 # Reference: HW10, Q5
