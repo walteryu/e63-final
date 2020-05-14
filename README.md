@@ -2,7 +2,7 @@
 
 ## Final Project - U.S. Commute Time Reduction with Machine Learning (Spark ML)
 
-### Author: Walter Yu, Graduate Degree Candidate
+### Author: Walter Yu
 
 ### Abstract
 
